@@ -18,7 +18,7 @@ function Calculadora() {
 
     const calculateResult = () => {
         try {
-            setResult(eval(result).toString());
+            setResult(Function('"use strict";return (' + result + ')')().toString());
         } catch {
             setResult('Error');
         }
